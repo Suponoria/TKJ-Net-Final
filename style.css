@@ -1,0 +1,539 @@
+/* ========================= */
+/* FILE : style.css */
+/* ========================= */
+
+
+/* Semua elemen menggunakan box-sizing yang mudah diprediksi */
+*, *::before, *::after {
+    box-sizing: border-box; /* atur hitungan lebar/tinggi elemen termasuk padding/border */
+}
+
+/* Atur font dan latar belakang dasar halaman */
+body {
+
+    /* Jenis font */
+    font-family: Arial, sans-serif; /* jenis huruf yang digunakan */
+
+    /* Menghilangkan jarak luar */
+    margin: 0; /* jarak luar elemen */
+
+    /* Menghilangkan jarak dalam */
+    padding: 0; /* jarak dalam elemen */
+
+    /* Warna background */
+    background-color: #f4f4f4; /* warna latar belakang elemen */
+}
+
+/* Pastikan semua gambar responsif */
+img {
+    max-width: 100%; /* lebar maksimum elemen */
+    display: block; /* cara elemen ditata dalam layout */
+    height: auto; /* tinggi elemen */
+}
+
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+
+/* Tampilan bar navigasi utama */
+.navbar {
+
+    /* Warna navbar */
+    background-color: #111; /* warna latar belakang elemen */
+
+    /* Warna teks */
+    color: #f4f4f4; /* warna teks */
+
+    /* Membuat isi navbar sejajar */
+    display: flex; /* cara elemen ditata dalam layout */
+
+    /* Memberi jarak kanan kiri */
+    justify-content: space-between; /* posisi elemen pada sumbu utama dalam flexbox */
+
+    /* Posisi tengah vertikal */
+    align-items: center; /* posisi elemen pada sumbu silang dalam flexbox */
+
+    /* Jarak dalam */
+    padding: 15px 30px; /* jarak dalam elemen */
+}
+
+
+/* Gaya daftar menu di navbar */
+.navbar ul {
+
+    /* Membuat menu horizontal */
+    display: flex; /* cara elemen ditata dalam layout */
+
+    /* Menghilangkan titik list */
+    list-style: none; /* gaya tanda daftar */
+
+    /* Jarak antar menu */
+    gap: 20px; /* jarak antara item dalam flex atau grid */
+}
+
+
+/* Gaya link navigasi */
+.navbar a {
+
+    /* Warna tulisan */
+    color: white; /* color = warna teks */
+
+    /* Menghilangkan garis bawah */
+    text-decoration: none; /* hiasan teks seperti garis bawah */
+}
+
+/* Tata letak brand logo dan teks */
+.brand {
+    display: flex; /* cara elemen ditata dalam layout */
+    align-items: center; /* posisi elemen pada sumbu silang dalam flexbox */
+    gap: 16px; /* jarak antara item dalam flex atau grid */
+}
+
+/* Gaya teks nama brand */
+.brand-title {
+    margin: 0; /* jarak luar elemen */
+    font-size: 1.75rem; /* ukuran huruf */
+    letter-spacing: 0.04em; /* jarak antar huruf */
+}
+
+/* Area untuk ikon logo */
+.logo-icon {
+    width: 60px; /* lebar elemen */
+    height: 60px; /* tinggi elemen */
+    display: inline-flex; /* cara elemen ditata dalam layout */
+    align-items: center; /* posisi elemen pada sumbu silang dalam flexbox */
+    justify-content: center; /* posisi elemen pada sumbu utama dalam flexbox */
+    color: #f4f4f4; /* warna teks */
+}
+
+/* Pastikan logo mengisi area ikon */
+.logo-icon img,
+.logo-icon svg {
+    width: 100%; /* lebar elemen */
+    height: 100%; /* tinggi elemen */
+}
+
+
+/* ========================= */
+/* HERO SECTION */
+/* ========================= */
+
+/* Wrapper hero dengan latar dan padding besar */
+.hero {
+    position: relative; /* jenis posisi elemen */
+    text-align: center; /* perataan teks dalam elemen */
+    padding: 80px 30px; /* jarak dalam elemen */
+    color: #fff; /* warna teks */
+    background-color: #111; /* warna latar belakang elemen */
+    overflow: hidden; /* penanganan konten yang melampaui kotak */
+}
+
+/* Latar belakang gambar hero dan overlay gelap */
+.hero::before {
+    content: ""; /* isi pseudo-elemen */
+    position: absolute; /* jenis posisi elemen */
+    inset: 0; /* gabungan top/right/bottom/left */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("mejakantor.avif") center/cover no-repeat;
+    filter: grayscale(100%); /* filter = efek visual pada gambar, di sini jadi abu-abu */
+    opacity: 0.65; /* keterlihatan elemen */
+    z-index: 0; /* lapisan tampilan elemen */
+}
+
+/* Pastikan konten hero muncul di atas overlay */
+.hero > * {
+    position: relative; /* jenis posisi elemen */
+    z-index: 1; /* lapisan tampilan elemen */
+}
+
+/* Gaya judul hero */
+.hero h2 {
+    color: #fff; /* warna teks */
+}
+
+/* Gaya paragraf hero */
+.hero p {
+    color: #ececec; /* warna teks */
+    max-width: 700px; /* lebar maksimum elemen */
+    margin: 0 auto; /* jarak luar elemen */
+    line-height: 1.7; /* properti line-height */
+}
+
+/* Tata letak ikon hero */
+.hero-icons {
+    display: flex; /* cara elemen ditata dalam layout */
+    justify-content: center; /* posisi elemen pada sumbu utama dalam flexbox */
+    gap: 24px; /* jarak antara item dalam flex atau grid */
+    flex-wrap: wrap; /* memungkinkan item flex pindah ke baris baru */
+    margin-top: 25px; /* properti margin-top */
+}
+
+/* Gaya kotak ikon hero dan kartu */
+.hero-icon,
+.card-icon {
+    display: inline-flex; /* cara elemen ditata dalam layout */
+    align-items: center; /* posisi elemen pada sumbu silang dalam flexbox */
+    justify-content: center; /* posisi elemen pada sumbu utama dalam flexbox */
+    width: 80px; /* lebar elemen */
+    height: 80px; /* tinggi elemen */
+    border-radius: 24px; /* lengkungan sudut elemen */
+    background-color: #e8e8e8; /* warna latar belakang elemen */
+    color: #111; /* warna teks */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12); /* bayangan di luar elemen */
+}
+
+/* Ukuran ikon di dalam kotak */
+.hero-icon svg,
+.card-icon svg,
+.hero-icon img,
+.card-icon img,
+.logo-icon img {
+    width: 40px; /* lebar ikon */
+    height: 40px; /* tinggi ikon */
+    object-fit: contain; /* jaga proporsi gambar supaya tidak melar atau terpotong */
+}
+
+/* Jarak bawah untuk ikon kartu */
+.card-icon {
+    margin-bottom: 10px; /* properti margin-bottom */
+}
+
+/* Gaya subtitle hero */
+.hero-subtitle {
+    color: #ddd; /* warna teks */
+    max-width: 680px; /* lebar maksimum elemen */
+    margin: 18px auto 0; /* jarak luar elemen */
+    line-height: 1.6; /* properti line-height */
+}
+
+/* Gaya catatan paket */
+.package-note {
+    color: #555; /* warna teks */
+    font-size: 0.95rem; /* ukuran huruf */
+    margin: 10px auto 22px; /* jarak luar elemen */
+    max-width: 640px; /* lebar maksimum elemen */
+}
+
+/* Jarak atas kontainer kartu */
+.card-container {
+    margin-top: 20px; /* properti margin-top */
+}
+
+/* Gaya teks detail dalam kartu */
+.card .detail {
+    color: #666; /* warna teks */
+    font-size: 0.95rem; /* ukuran huruf */
+    margin: 8px 0 0; /* jarak luar elemen */
+}
+
+
+/* ========================= */
+/* SECTION PAKET */
+/* ========================= */
+
+/* Wrapper section paket: latar yang gelap dan pusat teks */
+.paket {
+    position: relative; /* jenis posisi elemen */
+    padding: 80px 30px; /* jarak dalam elemen */
+    text-align: center; /* perataan teks dalam elemen */
+    background-color: rgba(17, 17, 17, 0.88); /* warna latar belakang elemen */
+    overflow: hidden; /* penanganan konten yang melampaui kotak */
+}
+
+/* Overlay motif halus di belakang section paket */
+.paket::before {
+    content: ""; /* isi pseudo-elemen */
+    position: absolute; /* jenis posisi elemen */
+    inset: 0; /* gabungan top/right/bottom/left */
+    background:
+        radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px) 0 0 / 24px 24px,
+        linear-gradient(rgba(17, 17, 17, 0.65), rgba(17, 17, 17, 0.65));
+    opacity: 0.55; /* keterlihatan elemen */
+    z-index: 0; /* lapisan tampilan elemen */
+}
+
+/* Semua konten child agar tampil di atas overlay */
+.paket > * {
+    position: relative; /* jenis posisi elemen */
+    z-index: 1; /* lapisan tampilan elemen */
+}
+
+/* Gaya judul paket */
+.paket h2 {
+    color: #fff; /* warna teks */
+    font-size: 2.2rem; /* ukuran huruf */
+    margin-bottom: 15px; /* properti margin-bottom */
+}
+
+/* Gaya catatan biaya pemasangan */
+.paket .package-note {
+    color: #ddd; /* warna teks */
+}
+
+
+/* Tempat card */
+.card-container {
+    display: flex; /* cara elemen ditata dalam layout */
+    justify-content: center; /* posisi elemen pada sumbu utama dalam flexbox */
+    gap: 20px; /* jarak antara item dalam flex atau grid */
+    flex-wrap: wrap; /* memungkinkan item flex pindah ke baris baru */
+    max-width: 980px; /* lebar maksimum elemen */
+    margin: 0 auto; /* jarak luar elemen */
+}
+
+
+/* Card paket */
+.card {
+    background-color: #ffffff; /* background-color = warna latar kotak */
+    padding: 32px 24px; /* jarak dalam elemen */
+    width: 220px; /* lebar kartu */
+    border-radius: 16px; /* sudut kartu menjadi melengkung */
+    border: 1px solid #d8d8d8; /* garis tepi elemen */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease; /* efek perubahan properti secara halus */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); /* bayangan di luar elemen */
+}
+
+/* Efek saat kursor diarahkan ke kartu */
+.card:hover {
+    transform: translateY(-8px); /* ubah posisi atau ukuran elemen */
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12); /* bayangan di luar elemen */
+    border-color: #999; /* properti border-color */
+    background-color: #f9f9f9; /* warna latar belakang elemen */
+}
+
+/* Gaya judul di dalam kartu */
+.card h3 {
+    color: #111; /* warna teks */
+    margin-top: 14px; /* properti margin-top */
+    margin-bottom: 10px; /* properti margin-bottom */
+}
+
+/* Gaya teks paket di kartu */
+.card p {
+    color: #555; /* warna teks */
+    margin: 8px 0; /* jarak luar elemen */
+}
+
+/* Gaya teks detail tambahan pada kartu */
+.card .detail {
+    color: #777; /* warna teks */
+}
+
+/* Gaya bagian ikon kecil dalam kartu */
+.card-icon {
+    background-color: #e8e8e8; /* warna latar belakang elemen */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* bayangan di luar elemen */
+}
+
+/* Ubah warna ikon kartu menjadi abu-abu */
+.card-icon img {
+    filter: grayscale(100%); /* efek visual tambahan pada elemen */
+}
+
+
+/* ========================= */
+/* FORM */
+/* ========================= */
+
+/* Area form pemesanan: kotak putih agar jelas terlihat */
+.form-section {
+
+    /* Background */
+    background-color: white; /* warna latar belakang elemen */
+
+    /* Jarak luar */
+    margin: 40px 20px 60px; /* jarak luar elemen */
+
+    /* Jarak dalam */
+    padding: 36px 30px; /* jarak dalam elemen */
+
+    /* Lebar penuh dengan sedikit jarak sisi */
+    width: auto; /* lebar elemen */
+    max-width: none; /* lebar maksimum elemen */
+
+    /* Sudut melengkung */
+    border-radius: 16px; /* lengkungan sudut elemen */
+
+    /* Bayangan lembut */
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08); /* bayangan di luar elemen */
+}
+
+/* Judul form agar terlihat lebih jelas */
+.form-section h2 {
+    margin-top: 0; /* properti margin-top */
+    margin-bottom: 24px; /* properti margin-bottom */
+}
+
+/* Mengatur jarak antar field form */
+form {
+    display: grid; /* cara elemen ditata dalam layout */
+    gap: 18px; /* jarak antara item dalam flex atau grid */
+}
+
+/* Gaya label form */
+form label {
+    display: block; /* cara elemen ditata dalam layout */
+    margin: 0; /* jarak luar elemen */
+    color: #111; /* warna teks */
+    font-weight: 600; /* ketebalan huruf */
+}
+
+/* Gaya input, textarea, dan select */
+input,
+textarea,
+select {
+    font: inherit; /* properti font */
+    display: block; /* cara elemen ditata dalam layout */
+    width: 100%; /* lebar elemen */
+    box-sizing: border-box; /* atur hitungan lebar/tinggi elemen termasuk padding/border */
+    padding: 12px 14px; /* jarak dalam elemen */
+    border: 1px solid #ccc; /* garis tepi elemen */
+    border-radius: 12px; /* lengkungan sudut elemen */
+    outline: none; /* properti outline */
+}
+
+/* Atur tinggi dan penyesuaian textarea */
+textarea {
+    min-height: 100px; /* minimal tinggi textarea */
+    resize: none; /* nonaktifkan pengubahan ukuran manual */
+}
+
+/* Gaya tombol umum */
+button {
+    padding: 14px 18px; /* jarak dalam elemen */
+    border: none; /* garis tepi elemen */
+    border-radius: 12px; /* lengkungan sudut elemen */
+    background-color: #111; /* warna latar belakang elemen */
+    color: #fff; /* warna teks */
+    cursor: pointer; /* ikon kursor saat hover */
+}
+
+/* Gaya tombol submit */
+button[type="submit"] {
+    background-color: #333; /* warna latar belakang elemen */
+}
+
+/* Hover efek untuk tombol */
+button:hover {
+    opacity: 0.95; /* keterlihatan elemen */
+}
+
+/* Area footer */
+footer {
+    padding: 25px 30px; /* jarak dalam elemen */
+    text-align: center; /* perataan teks dalam elemen */
+    background-color: #111; /* warna latar belakang elemen */
+    color: #f4f4f4; /* warna teks */
+}
+
+/* Reset margin paragraf footer */
+footer p {
+    margin: 0; /* jarak luar elemen */
+}
+
+/* Jarak atas teks total biaya */
+#totalBiaya {
+    margin: 18px 0 0; /* jarak luar elemen */
+}
+
+/* ========================= */
+/* RESPONSIVE MOBILE */
+/* ========================= */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* properti flex-direction */
+        align-items: flex-start; /* posisi elemen pada sumbu silang dalam flexbox */
+        gap: 14px; /* jarak antara item dalam flex atau grid */
+        padding: 15px 20px; /* jarak dalam elemen */
+    }
+
+    .navbar ul {
+        flex-wrap: wrap; /* memungkinkan item flex pindah ke baris baru */
+        justify-content: flex-start; /* posisi elemen pada sumbu utama dalam flexbox */
+        gap: 12px; /* jarak antara item dalam flex atau grid */
+    }
+
+    .brand {
+        gap: 12px; /* jarak antara item dalam flex atau grid */
+    }
+
+    .brand-title {
+        font-size: 1.5rem; /* ukuran huruf */
+    }
+
+    .hero,
+    .paket,
+    .form-section,
+    footer {
+        padding-left: 20px; /* properti padding-left */
+        padding-right: 20px; /* properti padding-right */
+    }
+
+    .hero {
+        padding: 60px 20px; /* jarak dalam elemen */
+    }
+
+    .paket {
+        padding: 60px 20px; /* jarak dalam elemen */
+    }
+
+    .form-section {
+        margin: 30px 16px 40px; /* jarak luar elemen */
+        padding: 28px 20px; /* jarak dalam elemen */
+    }
+
+    .hero p,
+    .hero-subtitle,
+    .paket h2,
+    .package-note {
+        max-width: 100%; /* lebar maksimum elemen */
+    }
+
+    .card-container {
+        gap: 16px; /* jarak antara item dalam flex atau grid */
+    }
+
+    .card {
+        width: 100%; /* lebar elemen */
+        max-width: 100%; /* lebar maksimum elemen */
+        min-width: 0; /* lebar minimum elemen */
+    }
+
+    input,
+    textarea,
+    select,
+    button {
+        width: 100%; /* lebar elemen */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 50px 16px; /* jarak dalam elemen */
+    }
+
+    .paket,
+    .form-section,
+    footer {
+        padding-left: 16px; /* properti padding-left */
+        padding-right: 16px; /* properti padding-right */
+    }
+
+    .navbar ul {
+        gap: 10px; /* jarak antara item dalam flex atau grid */
+    }
+
+    .hero-icons {
+        gap: 16px; /* jarak antara item dalam flex atau grid */
+    }
+
+    .card {
+        padding: 24px 20px; /* jarak dalam elemen */
+    }
+
+    .form-section {
+        margin: 24px 12px 36px; /* jarak luar elemen */
+    }
+}
